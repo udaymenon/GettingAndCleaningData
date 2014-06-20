@@ -43,4 +43,4 @@ Steps to transform input dataset to final output file "tidy_dataset_of_averages.
 	   'tidy_dataset_of_averages'
 	d) round all values in 'tidy_dataset_of_averages' to 3 decimal places for better 
 	   readability
-	e) write out 'tidy_dataset_of_averages' as file "tidy_dataset_of_averages.txt"
+	e) write out 'tidy_dataset_of_averages' as file "tidy_dataset_of_averages"
