@@ -7,7 +7,7 @@ Steps to transform input dataset to final output file "tidy_dataset_of_averages.
 1. read input files X_train.txt and X_test.txt and combine into a single data.table 'xcombined'
 2. read input file features.txt and extract second column and transpose it to yield headers for 
    'xcombined' data.table in step 1 above. This vector is called 'allColumns'
-3  identify subset of 'allColumns' that include columns which have 'mean' or 'std' in their name 
+3. identify subset of 'allColumns' that include columns which have 'mean' or 'std' in their name 
    but excludes columns that have 'meanFreq' in their name. This vector is called 'meanORstdColumns'
 4. compute a projection of the data.table 'xcombined' by extracting columns whose names are in 
    'meanORstdColumns' and call this new data.table 'xcombinedProj'
