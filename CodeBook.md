@@ -9,13 +9,13 @@ Steps to transform input dataset to final output file "tidy_dataset_of_averages.
    'xcombined' data.table in step 1 above. This vector is called 'allColumns'
 3  identify subset of 'allColumns' that include columns which have 'mean' or 'std' in their name 
    but excludes columns that have 'meanFreq' in their name. This vector is called 'meanORstdColumns'
-4. ompute a projection of the data.table 'xcombined' by extracting columns whose names are in 
+4. compute a projection of the data.table 'xcombined' by extracting columns whose names are in 
    'meanORstdColumns' and call this new data.table 'xcombinedProj'
 5. clean up column names of 'xcombinedProj' by stripping out '()' and replacing '-' with '_'. 
    This is done for better readability
 6. read input files y_train.txt, subject_train.txt, activity_labels.txt
 7. read input files y_test.txt, subject_test.txt
-8. combne train and test files for 'y' dimension into a single data.frame 'ycombined'
+8. combine train and test files for 'y' dimension into a single data.frame 'ycombined'
 9. combine train and test files for 'subject' dimension into a single data.frame 
    'subjectcombined'
 10. assign column name "activityid" to 'ycombined'
@@ -23,8 +23,8 @@ Steps to transform input dataset to final output file "tidy_dataset_of_averages.
     merge with activitylabels (see 15 below)
 12. add a new column called "subjectid" to 'ycombined' by assigning the first column of 
     'subjectcombined'
-13. assign "activityid" and "activityname" as the two column names for the activitylabels read 
-    in step 6 above
+13. assign "activityid" and "activityname" as the two column names for the activitylabels data.frame read 
+    in step 6 above from file activity_labels.txt
 14. merge 'ycombined' and 'activitylabels' data.frames using common column name "activityid". 
     The resulting data.frame is called 'mergedycombined'
 15. reorder 'mergedycombined' by sorting on column "ordering" which was created in step 11 for 
