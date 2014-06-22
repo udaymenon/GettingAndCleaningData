@@ -7,14 +7,16 @@
 ##Appropriately labels the data set with descriptive variable names.
 ##Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-setwd("C:/Users/Room2/Documents/datascience coursework/GettingAndCleaningData/Dataset/UCI HAR Dataset")
+##setwd("C:/Users/Room2/Documents/datascience coursework/GettingAndCleaningData/Dataset/UCI HAR Dataset")
 ##download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "Dataset.zip")
 
 #install.packages("data.table", "plyr")
 library(data.table)
 library(plyr)
 
-## read in files X_train.txt and X_test.txt
+##Note: Assumes that the train and test directories are in the current working dir.
+##Also assumes that the files activity_labels.txt,features.txt, features_info.txt are in current working dir
+## read in files X_train.txt and X_test.txt  
 xtrain <- read.table("train/X_train.txt", header=FALSE)
 xtest <- read.table("test/X_test.txt", header=FALSE)
 
@@ -104,5 +106,5 @@ tidy_dataset_of_averages <- eval(parse(text = expressionString))
 tidy_dataset_of_averages[,c(-1,-2)] <- round(tidy_dataset_of_averages[,c(-1,-2)],3)
 
 ##Write out final dataset
-write.table(tidy_dataset_of_averages,"tidy_dataset_of_averages")
+write.table(tidy_dataset_of_averages,"tidy_dataset_of_averages.txt")
 
